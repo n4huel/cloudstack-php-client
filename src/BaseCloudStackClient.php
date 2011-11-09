@@ -15,33 +15,33 @@ class BaseCloudStackClient {
     public $apiKey;
     public $secretKey;
     public $endpoint; // Does not ends with a "/"
-	
-	public function __construct($endpoint, $apiKey, $secretKey) {
-	    // API endpoint
-	    if (empty($endpoint)) {
-	        throw new CloudStackClientException(ENDPOINT_EMPTY_MSG, ENDPOINT_EMPTY);
-	    }
-	    
-	    if (!preg_match("|^http://.*$|", $endpoint)) {
-	        throw new CloudStackClientException(sprintf(ENDPOINT_NOT_URL_MSG, $endpoint), ENDPOINT_NOT_URL);
-	    }
-	    
-	    // $endpoint does not ends with a "/"
-	    $this->endpoint = substr($endpoint, -1) == "/" ? substr($endpoint, 0, -1) : $endpoint;
-	    
-	    // API key
-	    if (empty($apiKey)) {
-	        throw new CloudStackClientException(APIKEY_EMPTY_MSG, APIKEY_EMPTY);
-	    }
-		$this->apiKey = $apiKey;
-		
-		// API secret
-		if (empty($secretKey)) {
-		    throw new CloudStackClientException(SECRETKEY_EMPTY_MSG, SECRETKEY_EMPTY);
-		}
-		$this->secretKey = $secretKey;
-	}
-	
+    
+    public function __construct($endpoint, $apiKey, $secretKey) {
+        // API endpoint
+        if (empty($endpoint)) {
+            throw new CloudStackClientException(ENDPOINT_EMPTY_MSG, ENDPOINT_EMPTY);
+        }
+        
+        if (!preg_match("|^http://.*$|", $endpoint)) {
+            throw new CloudStackClientException(sprintf(ENDPOINT_NOT_URL_MSG, $endpoint), ENDPOINT_NOT_URL);
+        }
+        
+        // $endpoint does not ends with a "/"
+        $this->endpoint = substr($endpoint, -1) == "/" ? substr($endpoint, 0, -1) : $endpoint;
+        
+        // API key
+        if (empty($apiKey)) {
+            throw new CloudStackClientException(APIKEY_EMPTY_MSG, APIKEY_EMPTY);
+        }
+        $this->apiKey = $apiKey;
+        
+        // API secret
+        if (empty($secretKey)) {
+            throw new CloudStackClientException(SECRETKEY_EMPTY_MSG, SECRETKEY_EMPTY);
+        }
+        $this->secretKey = $secretKey;
+    }
+    
     public function getSignature($queryString) {
         if (empty($queryString)) {
             throw new CloudStackClientException(STRTOSIGN_EMPTY_MSG, STRTOSIGN_EMPTY);
