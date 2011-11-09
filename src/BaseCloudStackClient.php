@@ -62,7 +62,7 @@ class BaseCloudStackClient {
         }
         
         foreach ($args as $key => $value) {
-            if ($value == "") {
+            if (strlen($value) == 0) {
                 unset($args[$key]);
             }
         }
