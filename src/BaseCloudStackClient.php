@@ -15,6 +15,7 @@ class BaseCloudStackClient {
     public $apiKey;
     public $secretKey;
     public $endpoint; // Does not ends with a "/"
+    protected $lastUrl;
     
     public function __construct($endpoint, $apiKey, $secretKey) {
         // API endpoint
@@ -81,6 +82,7 @@ class BaseCloudStackClient {
         $url = $this->endpoint . "?" . $query;
 
         $httpRequest->setUrl($url);
+        $this->lastUrl = $url; // Cache the last url in case you want to see it
     
         $httpRequest->send();
         
@@ -132,4 +134,9 @@ class BaseCloudStackClient {
         
         return $response;
     }
+
+    public function getLastUrl() {
+        return isset($this->lastUrl) ? $this->lastUrl : false;
+    }
+        
 }
