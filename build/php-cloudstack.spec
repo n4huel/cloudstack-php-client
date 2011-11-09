@@ -8,6 +8,7 @@ Source0:    php-cloudstack-%{version}.tar.gz
 URL:        https://github.com/jasonhancock/cloudstack-php-client 
 Buildarch:  noarch
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root
+Requires:   php-pecl-http
 
 %description
 PHP client library for the CloudStack Admin API
