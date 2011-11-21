@@ -34,7 +34,7 @@ DEST_DIR="${RPM_BUILD_ROOT}/%{_datadir}/php/CloudStack/"
 install -p -m 644 CloudStack/BaseCloudStackClient.php      $DEST_DIR
 install -p -m 644 CloudStack/CloudStackClientException.php $DEST_DIR
 install -p -m 644 CloudStack/CloudStackClient.php          $DEST_DIR
-install -p -m 644 CloudStack/ExtendedStackClient.php       $DEST_DIR
+install -p -m 644 CloudStack/ExtendedCloudStackClient.php  $DEST_DIR
 
 %clean
 rm -rf "${RPM_BUILD_ROOT}"
