@@ -10,7 +10,7 @@ require('CloudStackClient.php');
  * file that was distributed with this source code.
  *
  * This is designed to work with the CloudStack API extension which can be
- * found at TODO: insert link here 
+ * found at https://github.com/jasonhancock/cloudstack-api-extension 
  */
 
 class ExtendedCloudStackClient extends CloudStackClient {
