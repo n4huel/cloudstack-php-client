@@ -1,6 +1,6 @@
 Name:       php-cloudstack
 Summary:    PHP client library for CloudStack API 
-Version:    0.0.2
+Version:    3.0.0 
 Release:    1
 License:    Open Source 
 Group:      System Environment/Libraries
@@ -48,6 +48,10 @@ rm -rf "${RPM_BUILD_ROOT}"
 %dir %{_datadir}/php/CloudStack
 
 %changelog
+* Tue Feb 28 2012 Jason Hancock <jsnbyh@gmail.com> 3.0.0 
+- Changing version numbering system to correlate with CloudStack version.
+- Updating for CloudStack 3.0.0
+
 * Mon Nov 21 2011 Jason Hancock <jsnbyh@gmail.com> 0.0.2-1
 - Adding extended api
 
