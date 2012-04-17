@@ -31,25 +31,20 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createNetworkOffering($args=array()) {
 
-        if (empty($args['displaytext'])) {
+        if (!isset($args['displaytext']) || strlen($args['displaytext']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'displaytext'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['guestiptype'])) {
+        if (!isset($args['guestiptype']) || strlen($args['guestiptype']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'guestiptype'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['supportedservices'])) {
+        if (!isset($args['supportedservices']) || strlen($args['supportedservices']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'supportedservices'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['traffictype'])) {
+        if (!isset($args['traffictype']) || strlen($args['traffictype']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'traffictype'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createNetworkOffering', $args);
     }
@@ -82,9 +77,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteNetworkOffering($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteNetworkOffering', $args);
     }
@@ -156,21 +150,17 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createNetwork($args=array()) {
 
-        if (empty($args['displaytext'])) {
+        if (!isset($args['displaytext']) || strlen($args['displaytext']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'displaytext'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['networkofferingid'])) {
+        if (!isset($args['networkofferingid']) || strlen($args['networkofferingid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'networkofferingid'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['zoneid'])) {
+        if (!isset($args['zoneid']) || strlen($args['zoneid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'zoneid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createNetwork', $args);
     }
@@ -184,9 +174,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteNetwork($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteNetwork', $args);
     }
@@ -239,9 +228,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function restartNetwork($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('restartNetwork', $args);
     }
@@ -260,9 +248,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateNetwork($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateNetwork', $args);
     }
@@ -286,13 +273,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createPhysicalNetwork($args=array()) {
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['zoneid'])) {
+        if (!isset($args['zoneid']) || strlen($args['zoneid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'zoneid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createPhysicalNetwork', $args);
     }
@@ -306,9 +291,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deletePhysicalNetwork($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deletePhysicalNetwork', $args);
     }
@@ -344,9 +328,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updatePhysicalNetwork($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updatePhysicalNetwork', $args);
     }
@@ -382,13 +365,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function addNetworkServiceProvider($args=array()) {
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['physicalnetworkid'])) {
+        if (!isset($args['physicalnetworkid']) || strlen($args['physicalnetworkid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'physicalnetworkid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('addNetworkServiceProvider', $args);
     }
@@ -402,9 +383,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteNetworkServiceProvider($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteNetworkServiceProvider', $args);
     }
@@ -439,9 +419,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateNetworkServiceProvider($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateNetworkServiceProvider', $args);
     }
@@ -463,21 +442,17 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createStorageNetworkIpRange($args=array()) {
 
-        if (empty($args['gateway'])) {
+        if (!isset($args['gateway']) || strlen($args['gateway']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'gateway'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['netmask'])) {
+        if (!isset($args['netmask']) || strlen($args['netmask']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'netmask'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['podid'])) {
+        if (!isset($args['podid']) || strlen($args['podid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'podid'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['startip'])) {
+        if (!isset($args['startip']) || strlen($args['startip']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'startip'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createStorageNetworkIpRange', $args);
     }
@@ -491,9 +466,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteStorageNetworkIpRange($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteStorageNetworkIpRange', $args);
     }
@@ -533,9 +507,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateStorageNetworkIpRange($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateStorageNetworkIpRange', $args);
     }
@@ -584,9 +557,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteNetworkDevice($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteNetworkDevice', $args);
     }
@@ -604,9 +576,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function listF5LoadBalancerNetworks($args=array()) {
 
-        if (empty($args['lbdeviceid'])) {
+        if (!isset($args['lbdeviceid']) || strlen($args['lbdeviceid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'lbdeviceid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('listF5LoadBalancerNetworks', $args);
     }
@@ -624,9 +595,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function listSrxFirewallNetworks($args=array()) {
 
-        if (empty($args['lbdeviceid'])) {
+        if (!isset($args['lbdeviceid']) || strlen($args['lbdeviceid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'lbdeviceid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('listSrxFirewallNetworks', $args);
     }
@@ -644,9 +614,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function listNetscalerLoadBalancerNetworks($args=array()) {
 
-        if (empty($args['lbdeviceid'])) {
+        if (!isset($args['lbdeviceid']) || strlen($args['lbdeviceid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'lbdeviceid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('listNetscalerLoadBalancerNetworks', $args);
     }
@@ -678,21 +647,17 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createLoadBalancerRule($args=array()) {
 
-        if (empty($args['algorithm'])) {
+        if (!isset($args['algorithm']) || strlen($args['algorithm']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'algorithm'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['privateport'])) {
+        if (!isset($args['privateport']) || strlen($args['privateport']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'privateport'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['publicport'])) {
+        if (!isset($args['publicport']) || strlen($args['publicport']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'publicport'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createLoadBalancerRule', $args);
     }
@@ -706,9 +671,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteLoadBalancerRule($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteLoadBalancerRule', $args);
     }
@@ -725,13 +689,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function removeFromLoadBalancerRule($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['virtualmachineids'])) {
+        if (!isset($args['virtualmachineids']) || strlen($args['virtualmachineids']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'virtualmachineids'), MISSING_ARGUMENT);
-        }
 
         return $this->request('removeFromLoadBalancerRule', $args);
     }
@@ -747,13 +709,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function assignToLoadBalancerRule($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['virtualmachineids'])) {
+        if (!isset($args['virtualmachineids']) || strlen($args['virtualmachineids']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'virtualmachineids'), MISSING_ARGUMENT);
-        }
 
         return $this->request('assignToLoadBalancerRule', $args);
     }
@@ -773,17 +733,14 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createLBStickinessPolicy($args=array()) {
 
-        if (empty($args['lbruleid'])) {
+        if (!isset($args['lbruleid']) || strlen($args['lbruleid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'lbruleid'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['methodname'])) {
+        if (!isset($args['methodname']) || strlen($args['methodname']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'methodname'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createLBStickinessPolicy', $args);
     }
@@ -797,9 +754,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteLBStickinessPolicy($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteLBStickinessPolicy', $args);
     }
@@ -846,9 +802,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function listLBStickinessPolicies($args=array()) {
 
-        if (empty($args['lbruleid'])) {
+        if (!isset($args['lbruleid']) || strlen($args['lbruleid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'lbruleid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('listLBStickinessPolicies', $args);
     }
@@ -868,9 +823,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function listLoadBalancerRuleInstances($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('listLoadBalancerRuleInstances', $args);
     }
@@ -887,9 +841,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateLoadBalancerRule($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateLoadBalancerRule', $args);
     }
@@ -907,25 +860,20 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function addF5LoadBalancer($args=array()) {
 
-        if (empty($args['networkdevicetype'])) {
+        if (!isset($args['networkdevicetype']) || strlen($args['networkdevicetype']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'networkdevicetype'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['password'])) {
+        if (!isset($args['password']) || strlen($args['password']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'password'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['physicalnetworkid'])) {
+        if (!isset($args['physicalnetworkid']) || strlen($args['physicalnetworkid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'physicalnetworkid'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['url'])) {
+        if (!isset($args['url']) || strlen($args['url']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'url'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['username'])) {
+        if (!isset($args['username']) || strlen($args['username']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'username'), MISSING_ARGUMENT);
-        }
 
         return $this->request('addF5LoadBalancer', $args);
     }
@@ -941,9 +889,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function configureF5LoadBalancer($args=array()) {
 
-        if (empty($args['lbdeviceid'])) {
+        if (!isset($args['lbdeviceid']) || strlen($args['lbdeviceid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'lbdeviceid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('configureF5LoadBalancer', $args);
     }
@@ -957,9 +904,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteF5LoadBalancer($args=array()) {
 
-        if (empty($args['lbdeviceid'])) {
+        if (!isset($args['lbdeviceid']) || strlen($args['lbdeviceid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'lbdeviceid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteF5LoadBalancer', $args);
     }
@@ -995,25 +941,20 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function addNetscalerLoadBalancer($args=array()) {
 
-        if (empty($args['networkdevicetype'])) {
+        if (!isset($args['networkdevicetype']) || strlen($args['networkdevicetype']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'networkdevicetype'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['password'])) {
+        if (!isset($args['password']) || strlen($args['password']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'password'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['physicalnetworkid'])) {
+        if (!isset($args['physicalnetworkid']) || strlen($args['physicalnetworkid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'physicalnetworkid'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['url'])) {
+        if (!isset($args['url']) || strlen($args['url']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'url'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['username'])) {
+        if (!isset($args['username']) || strlen($args['username']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'username'), MISSING_ARGUMENT);
-        }
 
         return $this->request('addNetscalerLoadBalancer', $args);
     }
@@ -1027,9 +968,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteNetscalerLoadBalancer($args=array()) {
 
-        if (empty($args['lbdeviceid'])) {
+        if (!isset($args['lbdeviceid']) || strlen($args['lbdeviceid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'lbdeviceid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteNetscalerLoadBalancer', $args);
     }
@@ -1049,9 +989,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function configureNetscalerLoadBalancer($args=array()) {
 
-        if (empty($args['lbdeviceid'])) {
+        if (!isset($args['lbdeviceid']) || strlen($args['lbdeviceid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'lbdeviceid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('configureNetscalerLoadBalancer', $args);
     }
@@ -1127,17 +1066,14 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deployVirtualMachine($args=array()) {
 
-        if (empty($args['serviceofferingid'])) {
+        if (!isset($args['serviceofferingid']) || strlen($args['serviceofferingid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'serviceofferingid'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['templateid'])) {
+        if (!isset($args['templateid']) || strlen($args['templateid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'templateid'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['zoneid'])) {
+        if (!isset($args['zoneid']) || strlen($args['zoneid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'zoneid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deployVirtualMachine', $args);
     }
@@ -1152,9 +1088,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function destroyVirtualMachine($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('destroyVirtualMachine', $args);
     }
@@ -1168,9 +1103,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function rebootVirtualMachine($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('rebootVirtualMachine', $args);
     }
@@ -1184,9 +1118,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function startVirtualMachine($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('startVirtualMachine', $args);
     }
@@ -1201,9 +1134,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function stopVirtualMachine($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('stopVirtualMachine', $args);
     }
@@ -1219,9 +1151,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function resetPasswordForVirtualMachine($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('resetPasswordForVirtualMachine', $args);
     }
@@ -1237,13 +1168,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function changeServiceForVirtualMachine($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['serviceofferingid'])) {
+        if (!isset($args['serviceofferingid']) || strlen($args['serviceofferingid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'serviceofferingid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('changeServiceForVirtualMachine', $args);
     }
@@ -1266,9 +1195,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateVirtualMachine($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateVirtualMachine', $args);
     }
@@ -1282,9 +1210,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function recoverVirtualMachine($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('recoverVirtualMachine', $args);
     }
@@ -1337,9 +1264,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function getVMPassword($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('getVMPassword', $args);
     }
@@ -1358,9 +1284,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function migrateVirtualMachine($args=array()) {
 
-        if (empty($args['virtualmachineid'])) {
+        if (!isset($args['virtualmachineid']) || strlen($args['virtualmachineid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'virtualmachineid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('migrateVirtualMachine', $args);
     }
@@ -1381,17 +1306,14 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function assignVirtualMachine($args=array()) {
 
-        if (empty($args['account'])) {
+        if (!isset($args['account']) || strlen($args['account']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'account'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['domainid'])) {
+        if (!isset($args['domainid']) || strlen($args['domainid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'domainid'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['virtualmachineid'])) {
+        if (!isset($args['virtualmachineid']) || strlen($args['virtualmachineid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'virtualmachineid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('assignVirtualMachine', $args);
     }
@@ -1405,9 +1327,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function restoreVirtualMachine($args=array()) {
 
-        if (empty($args['virtualmachineid'])) {
+        if (!isset($args['virtualmachineid']) || strlen($args['virtualmachineid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'virtualmachineid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('restoreVirtualMachine', $args);
     }
@@ -1429,13 +1350,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function addTrafficType($args=array()) {
 
-        if (empty($args['physicalnetworkid'])) {
+        if (!isset($args['physicalnetworkid']) || strlen($args['physicalnetworkid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'physicalnetworkid'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['traffictype'])) {
+        if (!isset($args['traffictype']) || strlen($args['traffictype']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'traffictype'), MISSING_ARGUMENT);
-        }
 
         return $this->request('addTrafficType', $args);
     }
@@ -1449,9 +1368,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteTrafficType($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteTrafficType', $args);
     }
@@ -1469,9 +1387,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function listTrafficTypes($args=array()) {
 
-        if (empty($args['physicalnetworkid'])) {
+        if (!isset($args['physicalnetworkid']) || strlen($args['physicalnetworkid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'physicalnetworkid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('listTrafficTypes', $args);
     }
@@ -1491,9 +1408,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateTrafficType($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateTrafficType', $args);
     }
@@ -1530,13 +1446,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function generateUsageRecords($args=array()) {
 
-        if (empty($args['enddate'])) {
+        if (!isset($args['enddate']) || strlen($args['enddate']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'enddate'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['startdate'])) {
+        if (!isset($args['startdate']) || strlen($args['startdate']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'startdate'), MISSING_ARGUMENT);
-        }
 
         return $this->request('generateUsageRecords', $args);
     }
@@ -1562,13 +1476,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function listUsageRecords($args=array()) {
 
-        if (empty($args['enddate'])) {
+        if (!isset($args['enddate']) || strlen($args['enddate']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'enddate'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['startdate'])) {
+        if (!isset($args['startdate']) || strlen($args['startdate']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'startdate'), MISSING_ARGUMENT);
-        }
 
         return $this->request('listUsageRecords', $args);
     }
@@ -1595,13 +1507,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function addTrafficMonitor($args=array()) {
 
-        if (empty($args['url'])) {
+        if (!isset($args['url']) || strlen($args['url']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'url'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['zoneid'])) {
+        if (!isset($args['zoneid']) || strlen($args['zoneid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'zoneid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('addTrafficMonitor', $args);
     }
@@ -1615,9 +1525,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteTrafficMonitor($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteTrafficMonitor', $args);
     }
@@ -1635,9 +1544,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function listTrafficMonitors($args=array()) {
 
-        if (empty($args['zoneid'])) {
+        if (!isset($args['zoneid']) || strlen($args['zoneid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'zoneid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('listTrafficMonitors', $args);
     }
@@ -1656,13 +1564,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function attachVolume($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['virtualmachineid'])) {
+        if (!isset($args['virtualmachineid']) || strlen($args['virtualmachineid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'virtualmachineid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('attachVolume', $args);
     }
@@ -1706,9 +1612,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createVolume($args=array()) {
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createVolume', $args);
     }
@@ -1722,9 +1627,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteVolume($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteVolume', $args);
     }
@@ -1772,17 +1676,14 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function extractVolume($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['mode'])) {
+        if (!isset($args['mode']) || strlen($args['mode']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'mode'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['zoneid'])) {
+        if (!isset($args['zoneid']) || strlen($args['zoneid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'zoneid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('extractVolume', $args);
     }
@@ -1797,13 +1698,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function migrateVolume($args=array()) {
 
-        if (empty($args['storageid'])) {
+        if (!isset($args['storageid']) || strlen($args['storageid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'storageid'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['volumeid'])) {
+        if (!isset($args['volumeid']) || strlen($args['volumeid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'volumeid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('migrateVolume', $args);
     }
@@ -1825,33 +1724,26 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createVolumeOnFiler($args=array()) {
 
-        if (empty($args['aggregatename'])) {
+        if (!isset($args['aggregatename']) || strlen($args['aggregatename']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'aggregatename'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['ipaddress'])) {
+        if (!isset($args['ipaddress']) || strlen($args['ipaddress']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'ipaddress'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['password'])) {
+        if (!isset($args['password']) || strlen($args['password']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'password'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['poolname'])) {
+        if (!isset($args['poolname']) || strlen($args['poolname']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'poolname'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['size'])) {
+        if (!isset($args['size']) || strlen($args['size']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'size'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['username'])) {
+        if (!isset($args['username']) || strlen($args['username']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'username'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['volumename'])) {
+        if (!isset($args['volumename']) || strlen($args['volumename']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'volumename'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createVolumeOnFiler', $args);
     }
@@ -1867,17 +1759,14 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function destroyVolumeOnFiler($args=array()) {
 
-        if (empty($args['aggregatename'])) {
+        if (!isset($args['aggregatename']) || strlen($args['aggregatename']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'aggregatename'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['ipaddress'])) {
+        if (!isset($args['ipaddress']) || strlen($args['ipaddress']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'ipaddress'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['volumename'])) {
+        if (!isset($args['volumename']) || strlen($args['volumename']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'volumename'), MISSING_ARGUMENT);
-        }
 
         return $this->request('destroyVolumeOnFiler', $args);
     }
@@ -1892,9 +1781,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function listVolumesOnFiler($args=array()) {
 
-        if (empty($args['poolname'])) {
+        if (!isset($args['poolname']) || strlen($args['poolname']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'poolname'), MISSING_ARGUMENT);
-        }
 
         return $this->request('listVolumesOnFiler', $args);
     }
@@ -1920,29 +1808,23 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createUser($args=array()) {
 
-        if (empty($args['account'])) {
+        if (!isset($args['account']) || strlen($args['account']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'account'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['email'])) {
+        if (!isset($args['email']) || strlen($args['email']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'email'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['firstname'])) {
+        if (!isset($args['firstname']) || strlen($args['firstname']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'firstname'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['lastname'])) {
+        if (!isset($args['lastname']) || strlen($args['lastname']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'lastname'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['password'])) {
+        if (!isset($args['password']) || strlen($args['password']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'password'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['username'])) {
+        if (!isset($args['username']) || strlen($args['username']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'username'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createUser', $args);
     }
@@ -1956,9 +1838,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteUser($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteUser', $args);
     }
@@ -1983,9 +1864,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateUser($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateUser', $args);
     }
@@ -2027,9 +1907,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function disableUser($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('disableUser', $args);
     }
@@ -2043,9 +1922,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function enableUser($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('enableUser', $args);
     }
@@ -2064,9 +1942,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function registerUserKeys($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('registerUserKeys', $args);
     }
@@ -2085,13 +1962,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function addVpnUser($args=array()) {
 
-        if (empty($args['password'])) {
+        if (!isset($args['password']) || strlen($args['password']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'password'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['username'])) {
+        if (!isset($args['username']) || strlen($args['username']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'username'), MISSING_ARGUMENT);
-        }
 
         return $this->request('addVpnUser', $args);
     }
@@ -2109,9 +1984,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function removeVpnUser($args=array()) {
 
-        if (empty($args['username'])) {
+        if (!isset($args['username']) || strlen($args['username']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'username'), MISSING_ARGUMENT);
-        }
 
         return $this->request('removeVpnUser', $args);
     }
@@ -2174,17 +2048,14 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createTemplate($args=array()) {
 
-        if (empty($args['displaytext'])) {
+        if (!isset($args['displaytext']) || strlen($args['displaytext']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'displaytext'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['ostypeid'])) {
+        if (!isset($args['ostypeid']) || strlen($args['ostypeid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'ostypeid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createTemplate', $args);
     }
@@ -2226,33 +2097,26 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function registerTemplate($args=array()) {
 
-        if (empty($args['displaytext'])) {
+        if (!isset($args['displaytext']) || strlen($args['displaytext']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'displaytext'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['format'])) {
+        if (!isset($args['format']) || strlen($args['format']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'format'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['hypervisor'])) {
+        if (!isset($args['hypervisor']) || strlen($args['hypervisor']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'hypervisor'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['ostypeid'])) {
+        if (!isset($args['ostypeid']) || strlen($args['ostypeid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'ostypeid'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['url'])) {
+        if (!isset($args['url']) || strlen($args['url']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'url'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['zoneid'])) {
+        if (!isset($args['zoneid']) || strlen($args['zoneid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'zoneid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('registerTemplate', $args);
     }
@@ -2274,9 +2138,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateTemplate($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateTemplate', $args);
     }
@@ -2292,17 +2155,14 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function copyTemplate($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['destzoneid'])) {
+        if (!isset($args['destzoneid']) || strlen($args['destzoneid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'destzoneid'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['sourcezoneid'])) {
+        if (!isset($args['sourcezoneid']) || strlen($args['sourcezoneid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'sourcezoneid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('copyTemplate', $args);
     }
@@ -2318,9 +2178,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteTemplate($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteTemplate', $args);
     }
@@ -2356,9 +2215,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function listTemplates($args=array()) {
 
-        if (empty($args['templatefilter'])) {
+        if (!isset($args['templatefilter']) || strlen($args['templatefilter']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'templatefilter'), MISSING_ARGUMENT);
-        }
 
         return $this->request('listTemplates', $args);
     }
@@ -2385,9 +2243,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateTemplatePermissions($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateTemplatePermissions', $args);
     }
@@ -2403,9 +2260,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function listTemplatePermissions($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('listTemplatePermissions', $args);
     }
@@ -2422,13 +2278,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function extractTemplate($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['mode'])) {
+        if (!isset($args['mode']) || strlen($args['mode']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'mode'), MISSING_ARGUMENT);
-        }
 
         return $this->request('extractTemplate', $args);
     }
@@ -2444,13 +2298,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function prepareTemplate($args=array()) {
 
-        if (empty($args['templateid'])) {
+        if (!isset($args['templateid']) || strlen($args['templateid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'templateid'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['zoneid'])) {
+        if (!isset($args['zoneid']) || strlen($args['zoneid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'zoneid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('prepareTemplate', $args);
     }
@@ -2465,13 +2317,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function attachIso($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['virtualmachineid'])) {
+        if (!isset($args['virtualmachineid']) || strlen($args['virtualmachineid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'virtualmachineid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('attachIso', $args);
     }
@@ -2485,9 +2335,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function detachIso($args=array()) {
 
-        if (empty($args['virtualmachineid'])) {
+        if (!isset($args['virtualmachineid']) || strlen($args['virtualmachineid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'virtualmachineid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('detachIso', $args);
     }
@@ -2557,21 +2406,17 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function registerIso($args=array()) {
 
-        if (empty($args['displaytext'])) {
+        if (!isset($args['displaytext']) || strlen($args['displaytext']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'displaytext'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['url'])) {
+        if (!isset($args['url']) || strlen($args['url']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'url'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['zoneid'])) {
+        if (!isset($args['zoneid']) || strlen($args['zoneid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'zoneid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('registerIso', $args);
     }
@@ -2593,9 +2438,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateIso($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateIso', $args);
     }
@@ -2611,9 +2455,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteIso($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteIso', $args);
     }
@@ -2629,17 +2472,14 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function copyIso($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['destzoneid'])) {
+        if (!isset($args['destzoneid']) || strlen($args['destzoneid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'destzoneid'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['sourcezoneid'])) {
+        if (!isset($args['sourcezoneid']) || strlen($args['sourcezoneid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'sourcezoneid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('copyIso', $args);
     }
@@ -2662,9 +2502,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateIsoPermissions($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateIsoPermissions', $args);
     }
@@ -2680,9 +2519,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function listIsoPermissions($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('listIsoPermissions', $args);
     }
@@ -2699,13 +2537,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function extractIso($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['mode'])) {
+        if (!isset($args['mode']) || strlen($args['mode']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'mode'), MISSING_ARGUMENT);
-        }
 
         return $this->request('extractIso', $args);
     }
@@ -2756,25 +2592,20 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createPortForwardingRule($args=array()) {
 
-        if (empty($args['ipaddressid'])) {
+        if (!isset($args['ipaddressid']) || strlen($args['ipaddressid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'ipaddressid'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['privateport'])) {
+        if (!isset($args['privateport']) || strlen($args['privateport']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'privateport'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['protocol'])) {
+        if (!isset($args['protocol']) || strlen($args['protocol']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'protocol'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['publicport'])) {
+        if (!isset($args['publicport']) || strlen($args['publicport']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'publicport'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['virtualmachineid'])) {
+        if (!isset($args['virtualmachineid']) || strlen($args['virtualmachineid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'virtualmachineid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createPortForwardingRule', $args);
     }
@@ -2788,9 +2619,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deletePortForwardingRule($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deletePortForwardingRule', $args);
     }
@@ -2812,9 +2642,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createFirewallRule($args=array()) {
 
-        if (empty($args['protocol'])) {
+        if (!isset($args['protocol']) || strlen($args['protocol']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'protocol'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createFirewallRule', $args);
     }
@@ -2828,9 +2657,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteFirewallRule($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteFirewallRule', $args);
     }
@@ -2874,25 +2702,20 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function addSrxFirewall($args=array()) {
 
-        if (empty($args['networkdevicetype'])) {
+        if (!isset($args['networkdevicetype']) || strlen($args['networkdevicetype']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'networkdevicetype'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['password'])) {
+        if (!isset($args['password']) || strlen($args['password']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'password'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['physicalnetworkid'])) {
+        if (!isset($args['physicalnetworkid']) || strlen($args['physicalnetworkid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'physicalnetworkid'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['url'])) {
+        if (!isset($args['url']) || strlen($args['url']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'url'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['username'])) {
+        if (!isset($args['username']) || strlen($args['username']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'username'), MISSING_ARGUMENT);
-        }
 
         return $this->request('addSrxFirewall', $args);
     }
@@ -2906,9 +2729,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteSrxFirewall($args=array()) {
 
-        if (empty($args['fwdeviceid'])) {
+        if (!isset($args['fwdeviceid']) || strlen($args['fwdeviceid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'fwdeviceid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteSrxFirewall', $args);
     }
@@ -2924,9 +2746,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function configureSrxFirewall($args=array()) {
 
-        if (empty($args['fwdeviceid'])) {
+        if (!isset($args['fwdeviceid']) || strlen($args['fwdeviceid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'fwdeviceid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('configureSrxFirewall', $args);
     }
@@ -2957,9 +2778,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function startRouter($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('startRouter', $args);
     }
@@ -2973,9 +2793,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function rebootRouter($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('rebootRouter', $args);
     }
@@ -2990,9 +2809,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function stopRouter($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('stopRouter', $args);
     }
@@ -3006,9 +2824,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function destroyRouter($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('destroyRouter', $args);
     }
@@ -3023,13 +2840,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function changeServiceForRouter($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['serviceofferingid'])) {
+        if (!isset($args['serviceofferingid']) || strlen($args['serviceofferingid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'serviceofferingid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('changeServiceForRouter', $args);
     }
@@ -3074,9 +2889,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createVirtualRouterElement($args=array()) {
 
-        if (empty($args['nspid'])) {
+        if (!isset($args['nspid']) || strlen($args['nspid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'nspid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createVirtualRouterElement', $args);
     }
@@ -3091,13 +2905,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function configureVirtualRouterElement($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['enabled'])) {
+        if (!isset($args['enabled']) || strlen($args['enabled']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'enabled'), MISSING_ARGUMENT);
-        }
 
         return $this->request('configureVirtualRouterElement', $args);
     }
@@ -3132,13 +2944,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createProject($args=array()) {
 
-        if (empty($args['displaytext'])) {
+        if (!isset($args['displaytext']) || strlen($args['displaytext']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'displaytext'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createProject', $args);
     }
@@ -3152,9 +2962,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteProject($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteProject', $args);
     }
@@ -3170,9 +2979,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateProject($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateProject', $args);
     }
@@ -3186,9 +2994,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function activateProject($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('activateProject', $args);
     }
@@ -3202,9 +3009,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function suspendProject($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('suspendProject', $args);
     }
@@ -3277,9 +3083,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateProjectInvitation($args=array()) {
 
-        if (empty($args['projectid'])) {
+        if (!isset($args['projectid']) || strlen($args['projectid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'projectid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateProjectInvitation', $args);
     }
@@ -3293,9 +3098,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteProjectInvitation($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteProjectInvitation', $args);
     }
@@ -3319,25 +3123,20 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function addHost($args=array()) {
 
-        if (empty($args['hypervisor'])) {
+        if (!isset($args['hypervisor']) || strlen($args['hypervisor']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'hypervisor'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['password'])) {
+        if (!isset($args['password']) || strlen($args['password']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'password'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['url'])) {
+        if (!isset($args['url']) || strlen($args['url']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'url'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['username'])) {
+        if (!isset($args['username']) || strlen($args['username']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'username'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['zoneid'])) {
+        if (!isset($args['zoneid']) || strlen($args['zoneid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'zoneid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('addHost', $args);
     }
@@ -3351,9 +3150,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function reconnectHost($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('reconnectHost', $args);
     }
@@ -3372,9 +3170,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateHost($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateHost', $args);
     }
@@ -3392,9 +3189,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteHost($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteHost', $args);
     }
@@ -3408,9 +3204,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function prepareHostForMaintenance($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('prepareHostForMaintenance', $args);
     }
@@ -3424,9 +3219,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function cancelHostMaintenance($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('cancelHostMaintenance', $args);
     }
@@ -3471,9 +3265,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function addSecondaryStorage($args=array()) {
 
-        if (empty($args['url'])) {
+        if (!isset($args['url']) || strlen($args['url']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'url'), MISSING_ARGUMENT);
-        }
 
         return $this->request('addSecondaryStorage', $args);
     }
@@ -3490,13 +3283,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateHostPassword($args=array()) {
 
-        if (empty($args['password'])) {
+        if (!isset($args['password']) || strlen($args['password']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'password'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['username'])) {
+        if (!isset($args['username']) || strlen($args['username']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'username'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateHostPassword', $args);
     }
@@ -3525,29 +3316,23 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createAccount($args=array()) {
 
-        if (empty($args['accounttype'])) {
+        if (!isset($args['accounttype']) || strlen($args['accounttype']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'accounttype'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['email'])) {
+        if (!isset($args['email']) || strlen($args['email']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'email'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['firstname'])) {
+        if (!isset($args['firstname']) || strlen($args['firstname']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'firstname'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['lastname'])) {
+        if (!isset($args['lastname']) || strlen($args['lastname']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'lastname'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['password'])) {
+        if (!isset($args['password']) || strlen($args['password']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'password'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['username'])) {
+        if (!isset($args['username']) || strlen($args['username']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'username'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createAccount', $args);
     }
@@ -3561,9 +3346,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteAccount($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteAccount', $args);
     }
@@ -3583,9 +3367,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateAccount($args=array()) {
 
-        if (empty($args['newname'])) {
+        if (!isset($args['newname']) || strlen($args['newname']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'newname'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateAccount', $args);
     }
@@ -3602,9 +3385,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function disableAccount($args=array()) {
 
-        if (empty($args['lock'])) {
+        if (!isset($args['lock']) || strlen($args['lock']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'lock'), MISSING_ARGUMENT);
-        }
 
         return $this->request('disableAccount', $args);
     }
@@ -3663,9 +3445,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function addAccountToProject($args=array()) {
 
-        if (empty($args['projectid'])) {
+        if (!isset($args['projectid']) || strlen($args['projectid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'projectid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('addAccountToProject', $args);
     }
@@ -3680,13 +3461,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteAccountFromProject($args=array()) {
 
-        if (empty($args['account'])) {
+        if (!isset($args['account']) || strlen($args['account']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'account'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['projectid'])) {
+        if (!isset($args['projectid']) || strlen($args['projectid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'projectid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteAccountFromProject', $args);
     }
@@ -3706,9 +3485,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function listProjectAccounts($args=array()) {
 
-        if (empty($args['projectid'])) {
+        if (!isset($args['projectid']) || strlen($args['projectid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'projectid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('listProjectAccounts', $args);
     }
@@ -3750,17 +3528,14 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createStoragePool($args=array()) {
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['url'])) {
+        if (!isset($args['url']) || strlen($args['url']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'url'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['zoneid'])) {
+        if (!isset($args['zoneid']) || strlen($args['zoneid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'zoneid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createStoragePool', $args);
     }
@@ -3775,9 +3550,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateStoragePool($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateStoragePool', $args);
     }
@@ -3791,9 +3565,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteStoragePool($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteStoragePool', $args);
     }
@@ -3808,13 +3581,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createPool($args=array()) {
 
-        if (empty($args['algorithm'])) {
+        if (!isset($args['algorithm']) || strlen($args['algorithm']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'algorithm'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createPool', $args);
     }
@@ -3828,9 +3599,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deletePool($args=array()) {
 
-        if (empty($args['poolname'])) {
+        if (!isset($args['poolname']) || strlen($args['poolname']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'poolname'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deletePool', $args);
     }
@@ -3845,13 +3615,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function modifyPool($args=array()) {
 
-        if (empty($args['algorithm'])) {
+        if (!isset($args['algorithm']) || strlen($args['algorithm']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'algorithm'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['poolname'])) {
+        if (!isset($args['poolname']) || strlen($args['poolname']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'poolname'), MISSING_ARGUMENT);
-        }
 
         return $this->request('modifyPool', $args);
     }
@@ -3883,9 +3651,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createSecurityGroup($args=array()) {
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createSecurityGroup', $args);
     }
@@ -3943,9 +3710,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function revokeSecurityGroupIngress($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('revokeSecurityGroupIngress', $args);
     }
@@ -3986,9 +3752,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function revokeSecurityGroupEgress($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('revokeSecurityGroupEgress', $args);
     }
@@ -4029,9 +3794,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function startSystemVm($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('startSystemVm', $args);
     }
@@ -4045,9 +3809,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function rebootSystemVm($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('rebootSystemVm', $args);
     }
@@ -4062,9 +3825,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function stopSystemVm($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('stopSystemVm', $args);
     }
@@ -4078,9 +3840,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function destroySystemVm($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('destroySystemVm', $args);
     }
@@ -4118,13 +3879,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function migrateSystemVm($args=array()) {
 
-        if (empty($args['hostid'])) {
+        if (!isset($args['hostid']) || strlen($args['hostid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'hostid'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['virtualmachineid'])) {
+        if (!isset($args['virtualmachineid']) || strlen($args['virtualmachineid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'virtualmachineid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('migrateSystemVm', $args);
     }
@@ -4144,9 +3903,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createSnapshot($args=array()) {
 
-        if (empty($args['volumeid'])) {
+        if (!isset($args['volumeid']) || strlen($args['volumeid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'volumeid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createSnapshot', $args);
     }
@@ -4189,9 +3947,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteSnapshot($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteSnapshot', $args);
     }
@@ -4212,25 +3969,20 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createSnapshotPolicy($args=array()) {
 
-        if (empty($args['intervaltype'])) {
+        if (!isset($args['intervaltype']) || strlen($args['intervaltype']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'intervaltype'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['maxsnaps'])) {
+        if (!isset($args['maxsnaps']) || strlen($args['maxsnaps']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'maxsnaps'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['schedule'])) {
+        if (!isset($args['schedule']) || strlen($args['schedule']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'schedule'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['timezone'])) {
+        if (!isset($args['timezone']) || strlen($args['timezone']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'timezone'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['volumeid'])) {
+        if (!isset($args['volumeid']) || strlen($args['volumeid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'volumeid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createSnapshotPolicy', $args);
     }
@@ -4261,9 +4013,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function listSnapshotPolicies($args=array()) {
 
-        if (empty($args['volumeid'])) {
+        if (!isset($args['volumeid']) || strlen($args['volumeid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'volumeid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('listSnapshotPolicies', $args);
     }
@@ -4278,13 +4029,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createLunOnFiler($args=array()) {
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['size'])) {
+        if (!isset($args['size']) || strlen($args['size']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'size'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createLunOnFiler', $args);
     }
@@ -4298,9 +4047,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function destroyLunOnFiler($args=array()) {
 
-        if (empty($args['path'])) {
+        if (!isset($args['path']) || strlen($args['path']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'path'), MISSING_ARGUMENT);
-        }
 
         return $this->request('destroyLunOnFiler', $args);
     }
@@ -4315,9 +4063,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function listLunsOnFiler($args=array()) {
 
-        if (empty($args['poolname'])) {
+        if (!isset($args['poolname']) || strlen($args['poolname']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'poolname'), MISSING_ARGUMENT);
-        }
 
         return $this->request('listLunsOnFiler', $args);
     }
@@ -4332,13 +4079,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function associateLun($args=array()) {
 
-        if (empty($args['iqn'])) {
+        if (!isset($args['iqn']) || strlen($args['iqn']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'iqn'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
         return $this->request('associateLun', $args);
     }
@@ -4353,13 +4098,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function dissociateLun($args=array()) {
 
-        if (empty($args['iqn'])) {
+        if (!isset($args['iqn']) || strlen($args['iqn']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'iqn'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['path'])) {
+        if (!isset($args['path']) || strlen($args['path']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'path'), MISSING_ARGUMENT);
-        }
 
         return $this->request('dissociateLun', $args);
     }
@@ -4376,13 +4119,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function enableStaticNat($args=array()) {
 
-        if (empty($args['ipaddressid'])) {
+        if (!isset($args['ipaddressid']) || strlen($args['ipaddressid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'ipaddressid'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['virtualmachineid'])) {
+        if (!isset($args['virtualmachineid']) || strlen($args['virtualmachineid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'virtualmachineid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('enableStaticNat', $args);
     }
@@ -4404,17 +4145,14 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createIpForwardingRule($args=array()) {
 
-        if (empty($args['ipaddressid'])) {
+        if (!isset($args['ipaddressid']) || strlen($args['ipaddressid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'ipaddressid'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['protocol'])) {
+        if (!isset($args['protocol']) || strlen($args['protocol']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'protocol'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['startport'])) {
+        if (!isset($args['startport']) || strlen($args['startport']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'startport'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createIpForwardingRule', $args);
     }
@@ -4428,9 +4166,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteIpForwardingRule($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteIpForwardingRule', $args);
     }
@@ -4472,9 +4209,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function disableStaticNat($args=array()) {
 
-        if (empty($args['ipaddressid'])) {
+        if (!isset($args['ipaddressid']) || strlen($args['ipaddressid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'ipaddressid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('disableStaticNat', $args);
     }
@@ -4491,9 +4227,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createDomain($args=array()) {
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createDomain', $args);
     }
@@ -4510,9 +4245,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateDomain($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateDomain', $args);
     }
@@ -4528,9 +4262,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteDomain($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteDomain', $args);
     }
@@ -4599,21 +4332,17 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createZone($args=array()) {
 
-        if (empty($args['dns1'])) {
+        if (!isset($args['dns1']) || strlen($args['dns1']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'dns1'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['internaldns1'])) {
+        if (!isset($args['internaldns1']) || strlen($args['internaldns1']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'internaldns1'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['networktype'])) {
+        if (!isset($args['networktype']) || strlen($args['networktype']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'networktype'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createZone', $args);
     }
@@ -4641,9 +4370,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateZone($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateZone', $args);
     }
@@ -4657,9 +4385,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteZone($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteZone', $args);
     }
@@ -4698,9 +4425,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createInstanceGroup($args=array()) {
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createInstanceGroup', $args);
     }
@@ -4714,9 +4440,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteInstanceGroup($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteInstanceGroup', $args);
     }
@@ -4731,9 +4456,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateInstanceGroup($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateInstanceGroup', $args);
     }
@@ -4790,25 +4514,20 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createServiceOffering($args=array()) {
 
-        if (empty($args['cpunumber'])) {
+        if (!isset($args['cpunumber']) || strlen($args['cpunumber']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'cpunumber'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['cpuspeed'])) {
+        if (!isset($args['cpuspeed']) || strlen($args['cpuspeed']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'cpuspeed'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['displaytext'])) {
+        if (!isset($args['displaytext']) || strlen($args['displaytext']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'displaytext'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['memory'])) {
+        if (!isset($args['memory']) || strlen($args['memory']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'memory'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createServiceOffering', $args);
     }
@@ -4822,9 +4541,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteServiceOffering($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteServiceOffering', $args);
     }
@@ -4841,9 +4559,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateServiceOffering($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateServiceOffering', $args);
     }
@@ -4887,25 +4604,20 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createPod($args=array()) {
 
-        if (empty($args['gateway'])) {
+        if (!isset($args['gateway']) || strlen($args['gateway']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'gateway'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['netmask'])) {
+        if (!isset($args['netmask']) || strlen($args['netmask']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'netmask'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['startip'])) {
+        if (!isset($args['startip']) || strlen($args['startip']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'startip'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['zoneid'])) {
+        if (!isset($args['zoneid']) || strlen($args['zoneid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'zoneid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createPod', $args);
     }
@@ -4926,9 +4638,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updatePod($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updatePod', $args);
     }
@@ -4942,9 +4653,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deletePod($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deletePod', $args);
     }
@@ -4983,13 +4693,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createDiskOffering($args=array()) {
 
-        if (empty($args['displaytext'])) {
+        if (!isset($args['displaytext']) || strlen($args['displaytext']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'displaytext'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createDiskOffering', $args);
     }
@@ -5007,9 +4715,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateDiskOffering($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateDiskOffering', $args);
     }
@@ -5023,9 +4730,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteDiskOffering($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteDiskOffering', $args);
     }
@@ -5067,21 +4773,17 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function addCluster($args=array()) {
 
-        if (empty($args['clustername'])) {
+        if (!isset($args['clustername']) || strlen($args['clustername']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'clustername'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['clustertype'])) {
+        if (!isset($args['clustertype']) || strlen($args['clustertype']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'clustertype'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['hypervisor'])) {
+        if (!isset($args['hypervisor']) || strlen($args['hypervisor']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'hypervisor'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['zoneid'])) {
+        if (!isset($args['zoneid']) || strlen($args['zoneid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'zoneid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('addCluster', $args);
     }
@@ -5095,9 +4797,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteCluster($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteCluster', $args);
     }
@@ -5117,9 +4818,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateCluster($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateCluster', $args);
     }
@@ -5165,9 +4865,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createRemoteAccessVpn($args=array()) {
 
-        if (empty($args['publicipid'])) {
+        if (!isset($args['publicipid']) || strlen($args['publicipid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'publicipid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createRemoteAccessVpn', $args);
     }
@@ -5181,9 +4880,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteRemoteAccessVpn($args=array()) {
 
-        if (empty($args['publicipid'])) {
+        if (!isset($args['publicipid']) || strlen($args['publicipid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'publicipid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteRemoteAccessVpn', $args);
     }
@@ -5210,9 +4908,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function listRemoteAccessVpns($args=array()) {
 
-        if (empty($args['publicipid'])) {
+        if (!isset($args['publicipid']) || strlen($args['publicipid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'publicipid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('listRemoteAccessVpns', $args);
     }
@@ -5241,9 +4938,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createVlanIpRange($args=array()) {
 
-        if (empty($args['startip'])) {
+        if (!isset($args['startip']) || strlen($args['startip']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'startip'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createVlanIpRange', $args);
     }
@@ -5257,9 +4953,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteVlanIpRange($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteVlanIpRange', $args);
     }
@@ -5305,9 +5000,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function createSSHKeyPair($args=array()) {
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
         return $this->request('createSSHKeyPair', $args);
     }
@@ -5325,9 +5019,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteSSHKeyPair($args=array()) {
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteSSHKeyPair', $args);
     }
@@ -5378,9 +5071,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateResourceLimit($args=array()) {
 
-        if (empty($args['resourcetype'])) {
+        if (!isset($args['resourcetype']) || strlen($args['resourcetype']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'resourcetype'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateResourceLimit', $args);
     }
@@ -5405,9 +5097,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateResourceCount($args=array()) {
 
-        if (empty($args['domainid'])) {
+        if (!isset($args['domainid']) || strlen($args['domainid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'domainid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateResourceCount', $args);
     }
@@ -5499,21 +5190,17 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function addExternalLoadBalancer($args=array()) {
 
-        if (empty($args['password'])) {
+        if (!isset($args['password']) || strlen($args['password']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'password'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['url'])) {
+        if (!isset($args['url']) || strlen($args['url']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'url'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['username'])) {
+        if (!isset($args['username']) || strlen($args['username']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'username'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['zoneid'])) {
+        if (!isset($args['zoneid']) || strlen($args['zoneid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'zoneid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('addExternalLoadBalancer', $args);
     }
@@ -5527,9 +5214,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteExternalLoadBalancer($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteExternalLoadBalancer', $args);
     }
@@ -5562,21 +5248,17 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function addExternalFirewall($args=array()) {
 
-        if (empty($args['password'])) {
+        if (!isset($args['password']) || strlen($args['password']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'password'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['url'])) {
+        if (!isset($args['url']) || strlen($args['url']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'url'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['username'])) {
+        if (!isset($args['username']) || strlen($args['username']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'username'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['zoneid'])) {
+        if (!isset($args['zoneid']) || strlen($args['zoneid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'zoneid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('addExternalFirewall', $args);
     }
@@ -5590,9 +5272,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function deleteExternalFirewall($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('deleteExternalFirewall', $args);
     }
@@ -5610,9 +5291,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function listExternalFirewalls($args=array()) {
 
-        if (empty($args['zoneid'])) {
+        if (!isset($args['zoneid']) || strlen($args['zoneid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'zoneid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('listExternalFirewalls', $args);
     }
@@ -5627,9 +5307,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function updateConfiguration($args=array()) {
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
         return $this->request('updateConfiguration', $args);
     }
@@ -5689,9 +5368,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function disassociateIpAddress($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('disassociateIpAddress', $args);
     }
@@ -5744,9 +5422,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function addSwift($args=array()) {
 
-        if (empty($args['url'])) {
+        if (!isset($args['url']) || strlen($args['url']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'url'), MISSING_ARGUMENT);
-        }
 
         return $this->request('addSwift', $args);
     }
@@ -5776,9 +5453,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function enableStorageMaintenance($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('enableStorageMaintenance', $args);
     }
@@ -5792,9 +5468,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function cancelStorageMaintenance($args=array()) {
 
-        if (empty($args['id'])) {
+        if (!isset($args['id']) || strlen($args['id']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
-        }
 
         return $this->request('cancelStorageMaintenance', $args);
     }
@@ -5886,9 +5561,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function queryAsyncJobResult($args=array()) {
 
-        if (empty($args['jobid'])) {
+        if (!isset($args['jobid']) || strlen($args['jobid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'jobid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('queryAsyncJobResult', $args);
     }
@@ -5956,13 +5630,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function registerSSHKeyPair($args=array()) {
 
-        if (empty($args['name'])) {
+        if (!isset($args['name']) || strlen($args['name']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'name'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['publickey'])) {
+        if (!isset($args['publickey']) || strlen($args['publickey']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'publickey'), MISSING_ARGUMENT);
-        }
 
         return $this->request('registerSSHKeyPair', $args);
     }
@@ -5997,13 +5669,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function login($args=array()) {
 
-        if (empty($args['username'])) {
+        if (!isset($args['username']) || strlen($args['username']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'username'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['password'])) {
+        if (!isset($args['password']) || strlen($args['password']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'password'), MISSING_ARGUMENT);
-        }
 
         return $this->request('login', $args);
     }
@@ -6029,17 +5699,14 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function ldapConfig($args=array()) {
 
-        if (empty($args['hostname'])) {
+        if (!isset($args['hostname']) || strlen($args['hostname']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'hostname'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['queryfilter'])) {
+        if (!isset($args['queryfilter']) || strlen($args['queryfilter']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'queryfilter'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['searchbase'])) {
+        if (!isset($args['searchbase']) || strlen($args['searchbase']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'searchbase'), MISSING_ARGUMENT);
-        }
 
         return $this->request('ldapConfig', $args);
     }
@@ -6053,9 +5720,8 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function getCloudIdentifier($args=array()) {
 
-        if (empty($args['userid'])) {
+        if (!isset($args['userid']) || strlen($args['userid']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'userid'), MISSING_ARGUMENT);
-        }
 
         return $this->request('getCloudIdentifier', $args);
     }
@@ -6073,13 +5739,11 @@ class CloudStackClient extends BaseCloudStackClient {
      */
     public function uploadCustomCertificate($args=array()) {
 
-        if (empty($args['certificate'])) {
+        if (!isset($args['certificate']) || strlen($args['certificate']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'certificate'), MISSING_ARGUMENT);
-        }
 
-        if (empty($args['domainsuffix'])) {
+        if (!isset($args['domainsuffix']) || strlen($args['domainsuffix']) == 0)
             throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'domainsuffix'), MISSING_ARGUMENT);
-        }
 
         return $this->request('uploadCustomCertificate', $args);
     }
