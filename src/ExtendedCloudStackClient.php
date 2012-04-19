@@ -47,4 +47,40 @@ class ExtendedCloudStackClient extends CloudStackClient {
 
         return $this->request('deployBundle', $args);
     }
+
+    /**
+     * Generates a url with a signature that can be used to load up the console
+     * for a given vm.
+     * @param integer id The id of the virtual machine to generate the url for
+     * @param string $console_proxy_url The url of the console proxy. Usually does
+     *    not need to be specified
+     * @return string the url with signature to talk to the console proxy
+     */
+    public function getConsoleProxyUrl($id, $console_proxy_url=null) {
+        $args = array();
+
+        // Building the query
+        $args['apikey'] = $this->apiKey;
+        $args['cmd'] = 'access';
+        $args['vm'] = $id;
+        ksort($args);
+        $query = http_build_query($args);
+        $query = str_replace("+", "%20", $query);
+        $query .= "&signature=" . $this->getSignature(strtolower($query));
+
+        if($console_proxy_url == null) {
+            // Usually the api endpoint is /client/api, but the console proxy
+            // endpoint is /client/console. Instead of making a separate param
+            // for that endpoint, chop it up ourselves to keep the config simple
+            if(preg_match('/^(.+)\/api$/', $this->endpoint, $matches)) {
+                $console_proxy_url = $matches[1] . '/console';
+            } else {
+                throw new Exception('Unable to formulate console proxy url based on api endpoint');
+            }
+        }
+
+        $url = $console_proxy_url . "?" . $query;
+
+        return $url;
+    }
 }
