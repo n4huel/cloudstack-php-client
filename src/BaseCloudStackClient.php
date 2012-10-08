@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
  
-require_once dirname(__FILE__) . "/CloudStackClientException.php";
+require_once dirname(__FILE__) . '/CloudStackClientException.php';
 
 class BaseCloudStackClient {
     public $apiKey;
     public $secretKey;
-    public $endpoint; // Does not ends with a "/"
+    public $endpoint;
     protected $lastUrl;
     
     public function __construct($endpoint, $apiKey, $secretKey) {
@@ -28,7 +28,7 @@ class BaseCloudStackClient {
         }
         
         // $endpoint does not ends with a "/"
-        $this->endpoint = substr($endpoint, -1) == "/" ? substr($endpoint, 0, -1) : $endpoint;
+        $this->endpoint = substr($endpoint, -1) == '/' ? substr($endpoint, 0, -1) : $endpoint;
         
         // API key
         if (empty($apiKey)) {
@@ -48,7 +48,7 @@ class BaseCloudStackClient {
             throw new CloudStackClientException(STRTOSIGN_EMPTY_MSG, STRTOSIGN_EMPTY);
         }
         
-        $hash = @hash_hmac("SHA1", $queryString, $this->secretKey, true);
+        $hash = @hash_hmac('SHA1', $queryString, $this->secretKey, true);
         $base64encoded = base64_encode($hash);
         return urlencode($base64encoded);
     }
@@ -71,39 +71,40 @@ class BaseCloudStackClient {
         // Building the query
         $args['apikey'] = $this->apiKey;
         $args['command'] = $command;
-        $args['response'] = "json";
+        $args['response'] = 'json';
         ksort($args);
         $query = http_build_query($args);
-        $query = str_replace("+", "%20", $query);
-        $query .= "&signature=" . $this->getSignature(strtolower($query));
+        $query = str_replace('+', '%20', $query);
+        $query .= '&signature=' . $this->getSignature(strtolower($query));
     
-        $httpRequest = new HttpRequest();
-        $httpRequest->setMethod(HTTP_METH_POST);
         $url = $this->endpoint . "?" . $query;
-
-        $httpRequest->setUrl($url);
         $this->lastUrl = $url; // Cache the last url in case you want to see it
-    
-        $httpRequest->send();
-        
-        $code =$httpRequest->getResponseCode();
-        $data = $httpRequest->getResponseData();
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        $data = curl_exec($ch);
+        $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
         if (empty($data)) {
             throw new CloudStackClientException(NO_DATA_RECEIVED_MSG, NO_DATA_RECEIVED);
         }
-        //echo $data['body'] . "\n";
-        $result = @json_decode($data['body']);
+
+        $result = @json_decode($data);
         if (empty($result)) {
             throw new CloudStackClientException(NO_VALID_JSON_RECEIVED_MSG, NO_VALID_JSON_RECEIVED);
         }
         
-        $propertyResponse = strtolower($command) . "response";
+        $propertyResponse = strtolower($command) . 'response';
         
         if (!property_exists($result, $propertyResponse)) {
-            if (property_exists($result, "errorresponse") && property_exists($result->errorresponse, "errortext")) {
+            if (property_exists($result, 'errorresponse') && property_exists($result->errorresponse, 'errortext')) {
                 throw new CloudStackClientException($result->errorresponse->errortext);
             } else {
-                throw new CloudStackClientException(sprintf("Unable to parse the response. Got code %d and message: %s", $code, $data['body']));
+                throw new CloudStackClientException(sprintf('Unable to parse the response. Got code %d and message: %s', $code, $data));
             }
         }
         
@@ -138,5 +139,4 @@ class BaseCloudStackClient {
     public function getLastUrl() {
         return isset($this->lastUrl) ? $this->lastUrl : false;
     }
-        
 }
