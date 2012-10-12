@@ -35,8 +35,10 @@ define("NOT_A_CLOUDSTACK_SERVER_MSG", "The response is not a CloudStack server r
 define("NO_VALID_JSON_RECEIVED", 1007);
 define("NO_VALID_JSON_RECEIVED_MSG", "The server did not issue a json response.");
 
-
 define("MISSING_ARGUMENT", 1008);
 define("MISSING_ARGUMENT_MSG", "Argument missing: %s");
+
+define("NO_DATA_RECEIVED", 1009);
+define("NO_DATA_RECEIVED_MSG", "The server did not return any data");
 
 class CloudStackClientException extends Exception { }
