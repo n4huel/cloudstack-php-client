@@ -10,24 +10,24 @@
  
 require_once dirname(__FILE__) . "/CloudStackClientTestCase.php";
 
-Class BaseCloudStackClientTest extends CloudStackClientTestCase {
+class BaseCloudStackClientTest extends CloudStackClientTestCase {
     public function test_endpoint_empty() {
-        $this->setExpectedExceptionCode(ENDPOINT_EMPTY);
+        $this->setExpectedExceptionCode(CloudStackClientException::ENDPOINT_EMPTY);
         new BaseCloudStackClient("", "-", "-");
     }
     
     public function test_endpoint_not_url() {
-        $this->setExpectedExceptionCode(ENDPOINT_NOT_URL);
+        $this->setExpectedExceptionCode(CloudStackClientException::ENDPOINT_NOT_URL);
         new BaseCloudStackClient("http:/fooh", "", "");
     }
     
     public function test_apikey_empty() {
-        $this->setExpectedExceptionCode(APIKEY_EMPTY);
+        $this->setExpectedExceptionCode(CloudStackClientException::APIKEY_EMPTY);
         new BaseCloudStackClient("http://foo", "", "");
     }
     
     public function test_secretkey_empty() {
-        $this->setExpectedExceptionCode(SECRETKEY_EMPTY);
+        $this->setExpectedExceptionCode(CloudStackClientException::SECRETKEY_EMPTY);
         new BaseCloudStackClient("http://foo", "-", "");
     }
     
@@ -51,7 +51,7 @@ Class BaseCloudStackClientTest extends CloudStackClientTestCase {
     }
     
     public function test_signature_empty_str() {
-        $this->setExpectedExceptionCode(STRTOSIGN_EMPTY);
+        $this->setExpectedExceptionCode(CloudStackClientException::STRTOSIGN_EMPTY);
         $cloudstack = new BaseCloudStackClient("http://foo", "-", "-");
         $cloudstack->getSignature("");
     }
@@ -67,29 +67,26 @@ Class BaseCloudStackClientTest extends CloudStackClientTestCase {
     }
 
     public function test_no_command() {
-        $this->setExpectedExceptionCode(NO_COMMAND);
+        $this->setExpectedExceptionCode(CloudStackClientException::NO_COMMAND);
         $cloudstack = new BaseCloudStackClient("http://google.com/", "slqkdjqslkdjlqskjd", "qlskdjlskqjdlkqsjdlkjq");
         $cloudstack->request("");
     }
 
     public function test_request_args_null() {
-        $this->setExpectedExceptionCode(WRONG_REQUEST_ARGS);
+        $this->setExpectedExceptionCode(CloudStackClientException::WRONG_REQUEST_ARGS);
         $cloudstack = new BaseCloudStackClient("http://google.com/", "slqkdjqslkdjlqskjd", "qlskdjlskqjdlkqsjdlkjq");
         $cloudstack->request("command-name-non-empty", null);
     }
 
     public function test_request_args_string() {
-        $this->setExpectedExceptionCode(WRONG_REQUEST_ARGS);
+        $this->setExpectedExceptionCode(CloudStackClientException::WRONG_REQUEST_ARGS);
         $cloudstack = new BaseCloudStackClient("http://google.com/", "slqkdjqslkdjlqskjd", "qlskdjlskqjdlkqsjdlkjq");
         $cloudstack->request("command-name-non-empty", "foo");
     }
     
     public function test_request() {
-        $this->setExpectedExceptionCode(NO_VALID_JSON_RECEIVED);
+        $this->setExpectedExceptionCode(CloudStackClientException::NO_VALID_JSON_RECEIVED);
         $cloudstack = new BaseCloudStackClient("http://google.com/", "slqkdjqslkdjlqskjd", "qlskdjlskqjdlkqsjdlkjq");
         $cloudstack->request("command-name-non-empty", array());
     }
-
 }
-
-

@@ -21,7 +21,7 @@ class ExtendedCloudStackClient extends CloudStackClient {
      */
     public function getUserData($args=array()) {
         if (empty($args['id']))
-            throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'id'), MISSING_ARGUMENT);
+            throw new CloudStackClientException(sprintf(CloudStackClientException::MISSING_ARGUMENT_MSG, 'id'), CloudStackClientException::MISSING_ARGUMENT);
 
         return $this->request('getUserData', $args);
     }
@@ -41,7 +41,7 @@ class ExtendedCloudStackClient extends CloudStackClient {
      */
     public function deployBundle($args=array()) {
         if (empty($args['bundle']))
-            throw new CloudStackClientException(sprintf(MISSING_ARGUMENT_MSG, 'bundle'), MISSING_ARGUMENT);
+            throw new CloudStackClientException(sprintf(CloudStackClientException::MISSING_ARGUMENT_MSG, 'bundle'), CloudStackClientException::MISSING_ARGUMENT);
 
         return $this->request('deployBundle', $args);
     }

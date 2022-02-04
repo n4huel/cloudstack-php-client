@@ -18,11 +18,11 @@ class BaseCloudStackClient {
     public function __construct($endpoint, $apiKey, $secretKey) {
         // API endpoint
         if (empty($endpoint)) {
-            throw new CloudStackClientException(ENDPOINT_EMPTY_MSG, ENDPOINT_EMPTY);
+            throw new CloudStackClientException(CloudStackClientException::ENDPOINT_EMPTY_MSG, CloudStackClientException::ENDPOINT_EMPTY);
         }
 
         if (!preg_match('/^(http|https):\/\/.*$/', $endpoint)) {
-            throw new CloudStackClientException(sprintf(ENDPOINT_NOT_URL_MSG, $endpoint), ENDPOINT_NOT_URL);
+            throw new CloudStackClientException(sprintf(CloudStackClientException::ENDPOINT_NOT_URL_MSG, $endpoint), CloudStackClientException::ENDPOINT_NOT_URL);
         }
 
         // $endpoint does not ends with a "/"
@@ -30,20 +30,20 @@ class BaseCloudStackClient {
 
         // API key
         if (empty($apiKey)) {
-            throw new CloudStackClientException(APIKEY_EMPTY_MSG, APIKEY_EMPTY);
+            throw new CloudStackClientException(CloudStackClientException::APIKEY_EMPTY_MSG, CloudStackClientException::APIKEY_EMPTY);
         }
         $this->apiKey = $apiKey;
 
         // API secret
         if (empty($secretKey)) {
-            throw new CloudStackClientException(SECRETKEY_EMPTY_MSG, SECRETKEY_EMPTY);
+            throw new CloudStackClientException(CloudStackClientException::SECRETKEY_EMPTY_MSG, CloudStackClientException::SECRETKEY_EMPTY);
         }
         $this->secretKey = $secretKey;
     }
 
     public function getSignature($queryString) {
         if (empty($queryString)) {
-            throw new CloudStackClientException(STRTOSIGN_EMPTY_MSG, STRTOSIGN_EMPTY);
+            throw new CloudStackClientException(CloudStackClientException::STRTOSIGN_EMPTY_MSG, CloudStackClientException::STRTOSIGN_EMPTY);
         }
 
         $hash = @hash_hmac('SHA1', $queryString, $this->secretKey, true);
@@ -53,11 +53,11 @@ class BaseCloudStackClient {
 
     public function request($command, $args = array()) {
         if (empty($command)) {
-            throw new CloudStackClientException(NO_COMMAND_MSG, NO_COMMAND);
+            throw new CloudStackClientException(CloudStackClientException::NO_COMMAND_MSG, CloudStackClientException::NO_COMMAND);
         }
 
         if (!is_array($args)) {
-            throw new CloudStackClientException(sprintf(WRONG_REQUEST_ARGS_MSG, $args), WRONG_REQUEST_ARGS);
+            throw new CloudStackClientException(sprintf(CloudStackClientException::WRONG_REQUEST_ARGS_MSG, $args), CloudStackClientException::WRONG_REQUEST_ARGS);
         }
 
         foreach ($args as $key => $value) {
@@ -88,12 +88,12 @@ class BaseCloudStackClient {
         $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
         if (empty($data)) {
-            throw new CloudStackClientException(NO_DATA_RECEIVED_MSG, NO_DATA_RECEIVED);
+            throw new CloudStackClientException(CloudStackClientException::NO_DATA_RECEIVED_MSG, CloudStackClientException::NO_DATA_RECEIVED);
         }
 
         $result = @json_decode($data);
         if (empty($result)) {
-            throw new CloudStackClientException(NO_VALID_JSON_RECEIVED_MSG, NO_VALID_JSON_RECEIVED);
+            throw new CloudStackClientException(CloudStackClientException::NO_VALID_JSON_RECEIVED_MSG, CloudStackClientException::NO_VALID_JSON_RECEIVED);
         }
 
         $propertyResponse = strtolower($command) . 'response';

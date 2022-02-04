@@ -7,38 +7,38 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
- 
-define("ENDPOINT_EMPTY", 1000);
-define("ENDPOINT_EMPTY_MSG", "No endpoint provided.");
 
-define("ENDPOINT_NOT_URL", 1001);
-define("ENDPOINT_NOT_URL_MSG", "The endpoint must be a URL (starting by http://): \"%s\"");
+class CloudStackClientException extends Exception {
+    const ENDPOINT_EMPTY = 1000;
+    const ENDPOINT_EMPTY_MSG = 'No endpoint provided.';
 
-define("APIKEY_EMPTY", 1002);
-define("APIKEY_EMPTY_MSG", "No API key provided.");
+    const ENDPOINT_NOT_URL = 1001;
+    const ENDPOINT_NOT_URL_MSG = 'The endpoint must be a URL (starting by http://): \"%s\"';
 
-define("SECRETKEY_EMPTY", 1003);
-define("SECRETKEY_EMPTY_MSG", "No secret key provided.");
+    const APIKEY_EMPTY = 1002;
+    const APIKEY_EMPTY_MSG = 'No API key provided.';
 
-define("STRTOSIGN_EMPTY", 1004);
-define("STRTOSIGN_EMPTY_MSG", "String to sign empty.");
+    const SECRETKEY_EMPTY = 1003;
+    const SECRETKEY_EMPTY_MSG = 'No secret key provided.';
 
-define("NO_COMMAND", 1005);
-define("NO_COMMAND_MSG", "No command given for the request.");
+    const STRTOSIGN_EMPTY = 1004;
+    const STRTOSIGN_EMPTY_MSG = 'String to sign empty.';
 
-define("WRONG_REQUEST_ARGS", 1006);
-define("WRONG_REQUEST_ARGS_MSG", "Arguments for the request must be in an array. Given: %s");
+    const NO_COMMAND = 1005;
+    const NO_COMMAND_MSG = 'No command given for the request.';
 
-define("NOT_A_CLOUDSTACK_SERVER", 1006);
-define("NOT_A_CLOUDSTACK_SERVER_MSG", "The response is not a CloudStack server response. Check your endpoint. Received: %s");
+    const WRONG_REQUEST_ARGS = 1006;
+    const WRONG_REQUEST_ARGS_MSG = 'Arguments for the request must be in an array. Given: %s';
 
-define("NO_VALID_JSON_RECEIVED", 1007);
-define("NO_VALID_JSON_RECEIVED_MSG", "The server did not issue a json response.");
+    const NOT_A_CLOUDSTACK_SERVER = 1006;
+    const NOT_A_CLOUDSTACK_SERVER_MSG = 'The response is not a CloudStack server response. Check your endpoint. Received: %s';
 
-define("MISSING_ARGUMENT", 1008);
-define("MISSING_ARGUMENT_MSG", "Argument missing: %s");
+    const NO_VALID_JSON_RECEIVED = 1007;
+    const NO_VALID_JSON_RECEIVED_MSG = 'The server did not issue a json response.';
 
-define("NO_DATA_RECEIVED", 1009);
-define("NO_DATA_RECEIVED_MSG", "The server did not return any data");
+    const MISSING_ARGUMENT = 1008;
+    const MISSING_ARGUMENT_MSG = 'Argument missing: %s';
 
-class CloudStackClientException extends Exception { }
+    const NO_DATA_RECEIVED = 1009;
+    const NO_DATA_RECEIVED_MSG = 'The server did not return any data';
+}
